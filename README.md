@@ -29,53 +29,54 @@ VALENCE is a minimum viable product demonstrating core auction mechanics, creato
 - **Database**: Supabase Cloud
 - **CDN**: Vercel Edge Network
 
-## Getting Started
+## 🚀 Quick Start
+
+**⚡ Ready to test the MVP? See the [TESTING_GUIDE.md](TESTING_GUIDE.md) for complete step-by-step instructions!**
 
 ### Prerequisites
 
 - Node.js 18+
 - npm or yarn
-- Supabase account
-- Stripe account (test mode)
+- Supabase account (free tier works!)
 
-### Installation
+### Installation (5 Minutes)
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd valence-mvp
-```
-
-2. Install dependencies:
+1. **Install dependencies:**
 ```bash
 npm install
 ```
 
-3. Set up environment variables:
+2. **Set up environment variables:**
 ```bash
 cp .env.example .env.local
 ```
 
-Edit `.env.local` with your Supabase and Stripe credentials:
-```
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+Edit `.env.local` with your Supabase credentials (see [TESTING_GUIDE.md](TESTING_GUIDE.md) for details):
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
-STRIPE_SECRET_KEY=sk_test_xxx
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_xxx
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-4. Set up the database:
+3. **Set up the database:**
+   - Open your Supabase project → SQL Editor
+   - Run `lib/supabase/schema.sql` (creates tables)
+   - Run `lib/supabase/seed.sql` (loads sample data - optional but recommended)
 
-Go to your Supabase project's SQL Editor and run the SQL script in `lib/supabase/schema.sql` to create all tables, indexes, policies, and functions.
-
-5. Run the development server:
+4. **Run the development server:**
 ```bash
 npm run dev
 ```
 
-6. Open [http://localhost:3000](http://localhost:3000) in your browser.
+5. **Open [http://localhost:3000](http://localhost:3000) and start testing!**
+
+### 📖 Documentation
+
+- **[TESTING_GUIDE.md](TESTING_GUIDE.md)** - Complete testing instructions with user flows
+- **[MVP_PROGRESS.md](MVP_PROGRESS.md)** - Current development status (70% complete!)
+- **lib/supabase/schema.sql** - Complete database schema
+- **lib/supabase/seed.sql** - Sample data for testing
 
 ## Project Structure
 
@@ -141,37 +142,47 @@ The application uses Supabase (PostgreSQL) with the following main tables:
 
 See `lib/supabase/schema.sql` for the complete schema with Row Level Security policies.
 
-## Development Phases
+## Development Status (70% Complete)
 
-### Phase 1: Foundation (Week 1)
+### ✅ Phase 1: Foundation (Complete)
 - ✅ Project setup (Next.js, Tailwind, Supabase)
-- ✅ Design system implementation
-- ✅ Authentication flows
-- ✅ Basic navigation and layouts
+- ✅ Design system implementation (colors, typography, components)
+- ✅ Authentication flows (signup, login, logout, role-based)
+- ✅ Navigation and layouts (creator/brand specific)
+- ✅ Public pages (landing, how-it-works, about)
 
-### Phase 2: Profiles & Auctions (Week 2)
-- Creator profile creation and editing
-- Auction creation form with validation
-- Auction listing and browse pages
-- Database schema implementation
+### ✅ Phase 2: Profiles & Auctions (Complete)
+- ✅ Creator profile creation and editing
+- ✅ Brand profile creation and editing
+- ✅ Auction creation form with validation
+- ✅ Auction listing and browse pages
+- ✅ Database schema with RLS policies
+- ✅ Sealed-bid submission interface
+- ✅ Discovery page for brands
 
-### Phase 3: Bidding & Real-time (Week 3)
-- Bidding interface and sealed-bid logic
-- Real-time auction updates
-- Auction closing mechanism
-- Winner approval/rejection flow
+### ✅ Phase 2.5: Dashboards (Complete)
+- ✅ Creator dashboard with metrics
+- ✅ Brand dashboard with metrics
+- ✅ Revenue tracking page (creators)
+- ✅ Campaign management page (brands)
+- ✅ Auction detail views (both roles)
 
-### Phase 4: Dashboards (Week 4)
-- Dashboard implementations
-- Performance metrics and charts
-- Notification system
-- Mobile responsive refinement
+### 🚧 Phase 3: Automation & Real-time (In Progress)
+- ⏳ Real-time auction updates (Supabase subscriptions)
+- ⏳ Automated auction closing mechanism
+- ⏳ Winner approval/rejection flow (UI exists, needs backend)
+- ⏳ Notification system
 
-### Phase 5: Polish & Deploy (Week 5-6)
-- Animations and polish
-- Edge case handling
-- Seed data creation
-- Testing and deployment
+### 📋 Phase 4: Polish & Deploy (Planned)
+- ⏳ Animations and transitions
+- ⏳ Mobile responsive optimization
+- ⏳ Edge case handling
+- ⏳ End-to-end testing
+- ⏳ Deployment to Vercel
+
+**Current Progress:** 70% - Core user flows complete and ready for testing!
+
+See [MVP_PROGRESS.md](MVP_PROGRESS.md) for detailed breakdown.
 
 ## Contributing
 
